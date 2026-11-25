@@ -10,26 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Kodu indir
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Java 17 kur
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Gradle wrapper yetkisi ver
-        run: chmod +x ./gradlew || true
+      - name: Gradle kur
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
 
       - name: APK derle
-        run: |
-          if [ -f ./gradlew ]; then
-            ./gradlew assembleDebug --no-daemon
-          else
-            gradle assembleDebug --no-daemon
-          fi
+        run: gradle assembleDebug --no-daemon
 
-      - name: APK'yı artifact olarak yükle
+      - name: APK'yı yükle
         uses: actions/upload-artifact@v4
         with:
           name: app-apk
