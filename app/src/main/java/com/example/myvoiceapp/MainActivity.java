@@ -13,16 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import io.agora.rtc2.ChannelMediaOptions;
 import io.agora.rtc2.IRtcEngineEventHandler;
 import io.agora.rtc2.RtcEngine;
 import io.agora.rtc2.RtcEngineConfig;
 
 public class MainActivity extends AppCompatActivity {
 
-    // BURAYA KENDİ AGORA APP ID'Nİ YAZ (console.agora.io'dan ücretsiz al)
     private static final String APP_ID = "0a2d6d6b79ea499eb286e883e8b4245d";
-    // Basit test için token boş: Agora Console'da "App Certificate"i boş bırakırsan token gerekmez
     private static final String TOKEN = "";
 
     private RtcEngine rtcEngine;
@@ -43,11 +40,10 @@ public class MainActivity extends AppCompatActivity {
                     "Bir kullanıcı katıldı: " + uid, Toast.LENGTH_SHORT).show());
         }
 
-       @Override
-public void onUserOffline(int uid, int reason) {
-    runOnUiThread(() -> Toast.makeText(MainActivity.this,
-            "Kullanıcı ayrıldı: " + uid, Toast.LENGTH_SHORT).show());
-} 
+        @Override
+        public void onUserOffline(int uid, int reason) {
+            runOnUiThread(() -> Toast.makeText(MainActivity.this,
+                    "Kullanıcı ayrıldı: " + uid, Toast.LENGTH_SHORT).show());
         }
 
         @Override
