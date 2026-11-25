@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
                     "Bir kullanıcı katıldı: " + uid, Toast.LENGTH_SHORT).show());
         }
 
-        @Override
-        public void onUserOffline(int uid, UserOfflineReason reason) {
-            runOnUiThread(() -> Toast.makeText(MainActivity.this,
-                    "Kullanıcı ayrıldı: " + uid, Toast.LENGTH_SHORT).show());
+       @Override
+public void onUserOffline(int uid, int reason) {
+    runOnUiThread(() -> Toast.makeText(MainActivity.this,
+            "Kullanıcı ayrıldı: " + uid, Toast.LENGTH_SHORT).show());
+} 
         }
 
         @Override
