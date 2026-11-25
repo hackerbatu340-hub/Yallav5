@@ -21,7 +21,7 @@ import io.agora.rtc2.RtcEngineConfig;
 public class MainActivity extends AppCompatActivity {
 
     // BURAYA KENDİ AGORA APP ID'Nİ YAZ (console.agora.io'dan ücretsiz al)
-    private static final String APP_ID = "0c5832db611a4bb8b7630a6b15993adc";
+    private static final String APP_ID = "0a2d6d6b79ea499eb286e883e8b4245d";
     // Basit test için token boş: Agora Console'da "App Certificate"i boş bırakırsan token gerekmez
     private static final String TOKEN = "";
 
